@@ -9,7 +9,7 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo apt update -y && pip install --upgrade pip && pip install matplotlib && pip install jupyter && pip install pandas && pip install numpy && pip install pyinstaller",
+	"postCreateCommand": "sudo apt update -y && sudo apt-get install pandoc -y && sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic -y && sudo apt-get install gfortran -y && export FC=gfortran && sudo apt-get install ninja-build -y && pip install --upgrade pip && pip install matplotlib && pip install jupyter && pip install pandas && pip install numpy && pip install pyinstaller && pip install scipy && pip install --upgrade meson && pip install pytest && pip install hypothesis && pip install pooch",
 	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
