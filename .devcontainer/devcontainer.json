@@ -1,10 +1,8 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
-	"name": "Python 3",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/python:1-3.12-bullseye",
-	// Features to add to the dev container. More info: https://containers.dev/features.
+	"name": "Python 3 Development Container",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 	"features": {
 		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:latest": {
 			"installChromium": true
@@ -13,11 +11,6 @@
 			"packages": "chromium"
 		}
 	},
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "sudo apt update -y && sudo apt-get install pandoc -y && sudo apt-get install texlive-xetex texlive-fonts-recommended texlive-plain-generic -y && sudo apt-get install gfortran -y && export FC=gfortran && sudo apt-get install ninja-build -y && pip install --upgrade pip && pip install matplotlib && pip install jupyter && pip install pandas && pip install numpy && pip install pyinstaller && pip install scipy && pip install --upgrade meson && pip install pytest && pip install hypothesis && pip install pooch && pip install plotly",
-	// Configure tool-specific properties.
 	"customizations": {
 		"vscode": {
 			"extensions": [
@@ -28,6 +21,4 @@
 			]
 		}
 	}
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
 }
